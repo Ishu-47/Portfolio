@@ -1,5 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
+import { portfolio } from "../../data/portfolio";
 
 export default function Hero() {
   return (
@@ -45,9 +46,7 @@ export default function Hero() {
           transition={{ delay: .35 }}
           className="mt-8 max-w-2xl text-lg leading-8 text-slate-400"
         >
-          I'm a Backend Engineer and Competitive Programmer passionate about
-          building scalable backend systems with Java, Spring Boot, Redis,
-          PostgreSQL, Docker and React.
+          {portfolio.personal.description}
         </motion.p>
 
         {/* Buttons */}
@@ -71,7 +70,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href={portfolio.personal.resume}
             className="flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-sky-500 hover:text-sky-400"
           >
             <Download size={18} />
