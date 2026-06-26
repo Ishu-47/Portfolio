@@ -1,5 +1,6 @@
 import Hero from "./components/sections/Hero";
 import Navbar from "./components/layout/Navbar";
+import Aurora from "./components/sections/Aurora";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Navbar />
 
       <Hero />
+
+      <Aurora/>
 
     </main>
   );

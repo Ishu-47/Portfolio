@@ -1,31 +1,58 @@
 @import "./theme.css";
 
+@import "tailwindcss";
+
+:root {
+
+    --background: #020617;
+
+    --surface: #0f172a;
+
+    --surface-light: #1e293b;
+
+    --text: #f8fafc;
+
+    --text-muted: #94a3b8;
+
+    --primary: #38bdf8;
+
+    --max-width: 1280px;
+
+}
+
 html{
     scroll-behavior:smooth;
 }
 
 body{
 
-    margin:0;
-
-    background:var(--bg);
+    background:var(--background);
 
     color:var(--text);
 
     font-family:"Inter",sans-serif;
 
     overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3,h4{
+
+    font-family:"Sora",sans-serif;
+
 }
 
 *{
+
     box-sizing:border-box;
+
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
+::selection{
 
-button{
-    font-family:inherit;
+    background:#38bdf8;
+
+    color:#020617;
+
 }

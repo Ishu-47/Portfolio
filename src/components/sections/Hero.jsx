@@ -1,112 +1,135 @@
-import { ArrowRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
 import { portfolio } from "../../data/portfolio";
 
 export default function Hero() {
-  return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-slate-950"
-    >
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-32 h-96 w-96 -translate-x-1/2 rounded-full bg-sky-500/20 blur-[120px]" />
-
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col px-6 pt-24 pb-16 lg:px-10">
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .5 }}
-          className="mb-5 text-lg text-sky-400"
+    return (
+        <section
+            id="home"
+            className="relative flex min-h-screen items-center overflow-hidden bg-slate-950"
         >
-          Hi, my name is
-        </motion.p>
+            {/* Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e920,transparent_45%)]" />
 
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: .15 }}
-          className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl"
-        >
-          ISHU KUMAR
-        </motion.h1>
+            <div className="absolute left-1/2 top-40 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-sky-500/10 blur-[140px]" />
 
-        <motion.h2
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: .25 }}
-          className="mt-2 text-5xl font-extrabold text-slate-400 sm:text-7xl"
-        >
-          RAJORA
-        </motion.h2>
+            <div className="relative mx-auto flex w-full max-w-7xl flex-col px-6 pt-28 lg:px-10">
 
-        <motion.p
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: .35 }}
-          className="mt-8 max-w-2xl text-lg leading-8 text-slate-400"
-        >
-          {portfolio.personal.description}
-        </motion.p>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: .5 }}
+                    className="mb-5 text-base font-medium text-sky-400"
+                >
+                    Building scalable software.
+                </motion.p>
 
-        {/* Buttons */}
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: .1 }}
+                    className="max-w-5xl font-['Sora'] text-5xl font-bold leading-tight text-white sm:text-7xl"
+                >
+                    {portfolio.personal.fullName}
+                </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: .45 }}
-          className="mt-10 flex flex-wrap gap-4"
-        >
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: .2 }}
+                    className="mt-4 max-w-4xl font-['Sora'] text-3xl font-semibold leading-tight text-slate-400 sm:text-5xl"
+                >
+                    Full-Stack Engineer &
+                    <br />
+                    Competitive Programmer.
+                </motion.h2>
 
-          <a
-            href="#projects"
-            className="group flex items-center gap-2 rounded-lg bg-sky-500 px-6 py-3 font-semibold text-white transition hover:bg-sky-400"
-          >
-            View Projects
-            <ArrowRight
-              size={18}
-              className="transition group-hover:translate-x-1"
-            />
-          </a>
+                <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: .35 }}
+                    className="mt-8 max-w-2xl text-lg leading-8 text-slate-400"
+                >
+                    I build production-ready applications using Java,
+                    Spring Boot, React, PostgreSQL, Redis, Docker and
+                    WebSockets, while enjoying competitive programming
+                    and solving challenging algorithmic problems.
+                </motion.p>
 
-          <a
-            href={portfolio.personal.resume}
-            className="flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-sky-500 hover:text-sky-400"
-          >
-            <Download size={18} />
-            Resume
-          </a>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: .45 }}
+                    className="mt-12 flex flex-wrap gap-5"
+                >
+                    <a
+                        href="https://aurora-seven-orpin.vercel.app/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group flex items-center gap-2 rounded-xl bg-sky-500 px-7 py-4 font-semibold transition hover:bg-sky-400"
+                    >
+                        Explore Aurora
 
-        </motion.div>
+                        <ArrowRight
+                            size={18}
+                            className="transition group-hover:translate-x-1"
+                        />
+                    </a>
 
-        {/* Achievement Pills */}
+                    <a
+                        href={portfolio.personal.resume}
+                        className="flex items-center gap-2 rounded-xl border border-slate-700 px-7 py-4 font-semibold text-slate-200 transition hover:border-sky-500 hover:text-sky-400"
+                    >
+                        <Download size={18} />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: .7 }}
-          className="mt-14 flex flex-wrap gap-3"
-        >
+                        Resume
+                    </a>
+                </motion.div>
 
-          <span className="rounded-full border border-sky-500/40 bg-sky-500/10 px-4 py-2 text-sm text-sky-300">
-            Codeforces Expert
-          </span>
+                {/* Stats */}
 
-          <span className="rounded-full border border-yellow-500/40 bg-yellow-500/10 px-4 py-2 text-sm text-yellow-300">
-            LeetCode Knight
-          </span>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: .7 }}
+                    className="mt-20 grid grid-cols-2 gap-5 md:grid-cols-4"
+                >
+                    <Stat
+                        number="1683"
+                        label="Codeforces"
+                    />
 
-          <span className="rounded-full border border-green-500/40 bg-green-500/10 px-4 py-2 text-sm text-green-300">
-            CodeChef 4★
-          </span>
+                    <Stat
+                        number="2088"
+                        label="LeetCode"
+                    />
 
-          <span className="rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-sm text-purple-300">
-            ICPC Regionalist
-          </span>
+                    <Stat
+                        number="4★"
+                        label="CodeChef"
+                    />
 
-        </motion.div>
+                    <Stat
+                        number="2025"
+                        label="ICPC Regionalist"
+                    />
+                </motion.div>
 
-      </div>
-    </section>
-  );
+            </div>
+        </section>
+    );
+}
+
+function Stat({ number, label }) {
+    return (
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <h3 className="text-3xl font-bold text-white">
+                {number}
+            </h3>
+
+            <p className="mt-2 text-slate-400">
+                {label}
+            </p>
+        </div>
+    );
 }
